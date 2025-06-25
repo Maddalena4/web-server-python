@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - A Scuola di Tuffi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="fixed-header">
+    <h1>A SCUOLA DI TUFFI</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="corsi.html">Corsi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Scopri il mondo del nuoto con noi!</h2>
+      <p>Professionisti, passione e sicurezza per tutte le età.</p>
+      <a href="corsi.html" class="cta-button">Scopri i corsi</a>
+    </div>
+  </section>
+
+  <section class="about-us">
+    <h2>Chi Siamo</h2>
+    <div class="about-content">
+      <img src="https://centroestivoforli.com/wp-content/uploads/2022/04/Centro-Estivo-Forli-Piscina-Comunale-Estate-1.jpeg" alt="Piscina" />
+      <p>
+        Siamo un team di istruttori professionisti con anni di esperienza nel nuoto e nelle discipline acquatiche.
+        La nostra missione è farvi innamorare dell'acqua in modo sicuro, divertente e formativo.
+      </p>
+    </div>
+  </section>
+
+  <section class="best-moments-carousel">
+    <h2>Best Moments</h2>
+    <div class="carousel">
+      <img
+        src="https://www.piscinecastiglione.it/wp-content/uploads/2021/05/20190711_AMas_AM0_2297.jpg"
+        alt="Momento 1"
+        class="carousel-img active"
+      />
+      <img
+        src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-459214425-1662969093.jpg"
+        alt="Momento 2"
+        class="carousel-img"
+      />
+      <img
+        src="https://static.open.online/wp-content/uploads/2022/08/nuoto-sincronizzato.jpg"
+        alt="Momento 3"
+        class="carousel-img"
+      />
+      <img
+        src="https://lascuolafanotizia.it/wp-content/uploads/2021/01/Pallanuoto-Settebello-copertina.jpg"
+        alt="Momento 4"
+        class="carousel-img"
+      />
+    </div>
+    <button id="prev" aria-label="Immagine precedente">‹</button>
+    <button id="next" aria-label="Immagine successiva">›</button>
+  </section>
+
+  <section class="faq">
+    <h2>Domande Frequenti</h2>
+    <details>
+      <summary>Qual è l'età minima per iscriversi?</summary>
+      <p>Accettiamo bambini dai 0 anni con corsi di acquaticità e adulti di tutte le età.</p>
+    </details>
+    <details>
+      <summary>Ci sono prove di livello per i corsi?</summary>
+      <p>No, i corsi sono strutturati per diversi livelli e si adattano progressivamente alle capacità di ogni partecipante.</p>
+    </details>
+    <details>
+      <summary>Come posso iscrivermi?</summary>
+      <p>Puoi contattarci tramite la pagina Contatti o iscriverti direttamente in piscina.</p>
+    </details>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a> |
+      <a href="corsi.html">Corsi</a> |
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <p>📍 Via Roma 1, Milano | 📞 7463522 | ✉ info@tuffatinpiscina.it</p>
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.carousel-img');
+    let current = 0;
+
+    document.getElementById('next').addEventListener('click', () => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      images[current].classList.remove('active');
+      current = (current - 1 + images.length) % images.length;
+      images[current].classList.add('active');
+    });
+  </script>
+</body>
+</html>
