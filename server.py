@@ -8,10 +8,14 @@ from datetime import datetime
 HOST = '127.0.0.1'
 PORT = 8080
 WWW_ROOT = './www'
+LOG = './log.txt'
 
 def log(method, path, status):
     now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    print(f"[{now}] {method} {path} => {status}")
+    log_entry = f"[{now}] {method} {path} => {status}"
+    print(log_entry)
+    with open(LOG, 'a') as logfile:
+        logfile.write(log_entry + '\n')
 
 def serve_file(client, path):
     if path == '/':
