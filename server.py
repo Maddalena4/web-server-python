@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import socket
-import threading
 import os
 import mimetypes
 from datetime import datetime
@@ -64,7 +63,7 @@ def start_server():
         print(f"Server attivo su http://{HOST}:{PORT}")
         while True:
             client, addr = server.accept()
-            threading.Thread(target=handle_client, args=(client, addr)).start()
+            handle_client(client, addr)
 
 if __name__ == "__main__":
     start_server()
